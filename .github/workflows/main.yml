@@ -18,3 +18,9 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: 17
+
+      - name: Build NxtGen Application
+        run: mvn -b build --file pom.xml
+
+      - name: Test NxtGen Application
+        run: mvn -B test --file pom.xml
