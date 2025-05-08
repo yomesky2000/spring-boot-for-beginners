@@ -71,4 +71,3 @@ jobs:
           sonar-host-url: ${{ secrets.NXTGEN_SONAR_HOST_URL }}
           sonar-token: ${{ secrets.SONAR_GITHUB_ACTION_TOKEN }}
           sonar-project-key: Spring-Boot
-          #sonar-organization: default
