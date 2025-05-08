@@ -47,5 +47,5 @@ jobs:
           context: .
           dockerfile: Dockerfile
           push: true
-          tags: ${{ secrets.GIT_ACTIONS_DOCKER_HUB_USERNAME }}/spring-boot-for-beginners:JOB_NUMBER
+          tags: ${{ secrets.GIT_ACTIONS_DOCKER_HUB_USERNAME }}/spring-boot-for-beginners:$JOB_NUMBER
 
