@@ -10,5 +10,11 @@ jobs:
     name: Deployment of NxtGen Spring Application
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: SCM Checkout
         uses: actions/checkout@v3     
+
+      - name: Install Java  JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: 17
