@@ -49,23 +49,7 @@ jobs:
           push: true
           tags: ${{ secrets.GIT_ACTIONS_DOCKER_HUB_USERNAME }}/spring-boot-for-beginners:latest
 
-name: SonarQube Analysis
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened]
-
-jobs:
-  sonar:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: SonarQube Scan
+      - name: SonarQube Analysis
         uses: SonarSource/sonarqube-scan-action@v2.2
         with:
           sonar-host-url: ${{ secrets.NXTGEN_SONAR_HOST_URL }}
