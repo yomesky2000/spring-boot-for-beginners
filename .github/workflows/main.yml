@@ -27,3 +27,10 @@ jobs:
           mvn -B clean
           mvn -B package  --file pom.xml
 
+      - name: Build NxtGen Docker Image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          dockerfile: Dockerfile
+          push: false
+          tags: ${{ secrets.GIT_ACTIONS_DOCKER_HUB_USERNAME }}/spring-boot-for-beginners:latest
