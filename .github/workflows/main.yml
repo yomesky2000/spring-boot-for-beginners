@@ -1,0 +1,14 @@
+name: Deployment of NxtGen Spring Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    name: Deployment of NxtGen Spring Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3     
