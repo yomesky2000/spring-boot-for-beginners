@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: SCM Checkout
-        uses: actions/checkout@v3     
+        uses: actions/checkout@v4
 
       - name: Install Java  JDK 17
         uses: actions/setup-java@v3
@@ -19,8 +19,11 @@ jobs:
           distribution: 'corretto'
           java-version: 17
 
-      - name: Build NxtGen Application
-        run: mvn -b build --file pom.xml
-
       - name: Test NxtGen Application
         run: mvn -B test --file pom.xml
+
+      - name: Build & Package NxtGen Application
+        run: |
+          mvn -B clean
+          mvn -B package  --file pom.xml
+
